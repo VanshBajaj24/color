@@ -4,20 +4,20 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div id='main'>
+        <h2> GENERATE YOUR OWN COLOR PALLETE</h2>
+      </div>
+      <div id='pallete'>
+        <div id="p1"></div>
+        <div id="p2"></div>
+        <div id="p3"></div>
+        <div id="p4"></div>
+        <div id="p5"></div>
+        <div id="p6"></div>
+      </div>
+      <div id="btn">
+        <button>GENERATE</button>
+      </div>
     </div>
   );
 }
