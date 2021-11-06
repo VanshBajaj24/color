@@ -19,18 +19,8 @@ class Color extends React.Component {
   Copy
 </button></div>
         <p className="color__code"   ref={(textarea) => this.textArea = textarea} onClick={this.props.update.bind(this, this.props.index)}>{this.props.hexCode}</p>
-        {/* <button 
-  onClick={() =>  navigator.clipboard.writeText(`${this.props.hexCode}`)}
->
-  Copy
-</button> */}
-
       </div>
-      
-      
     );
-  
-    
   }
 };
 

@@ -4,26 +4,13 @@
   background-color: white;
   border-radius: 10px;
 }
-#main{
-  align-items: center;
- 
-}
-#pallete{
-  display: flex;
-  margin: 2em 3em 3em 6em ;
-  flex-direction: row;
-}
-#p1,#p2,#p3,#p4,#p5,#p6{
-  height: 200px;
-  width: 100px;
-
-  border-style: dashed;
-}
 
 button{
   background-color: none;
-  border-radius: 20px;
-  
+  margin-top: 0;
+  opacity: 60%;
+  width: 100%;
+ 
 }
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
