@@ -2,31 +2,9 @@ import logo from './logo.svg';
 import './App.css';
 import randomcolor from './RandomColors'
 import React from 'react';
+
 var ReactDOM = require('react-dom');
 
-
-// function App() {
-//   return (
-//     <div className="App">
-//       <div id='main'>
-//         <h2> GENERATE YOUR OWN COLOR PALLETE</h2>
-//       </div>
-//       <div id='pallete'>
-//         <div id="p1"></div>
-//         <div id="p2"></div>
-//         <div id="p3"></div>
-//         <div id="p4"></div>
-//         <div id="p5"></div>
-//         <div id="p6"></div>
-//       </div>
-//       <randomcolor />
-      
-//       <div id="btn">
-//         <button>GENERATE</button>
-//       </div>
-//     </div>
-//   );
-// }
 class Color extends React.Component {
   
   render () {
@@ -34,15 +12,24 @@ class Color extends React.Component {
       backgroundColor: this.props.hexCode
     }
     return (
-      <div className="color" onClick={this.props.update.bind(this, this.props.index)} style={style}>
-        <p className="color__code">{this.props.hexCode}</p>
+      <div className="color"  style={style}>
+        <div><button 
+  onClick={() =>  navigator.clipboard.writeText(`${this.props.hexCode}`)}
+>
+  Copy
+</button></div>
+        <p className="color__code"   ref={(textarea) => this.textArea = textarea} onClick={this.props.update.bind(this, this.props.index)}>{this.props.hexCode}</p>
+        {/* <button 
+  onClick={() =>  navigator.clipboard.writeText(`${this.props.hexCode}`)}
+>
+  Copy
+</button> */}
+
       </div>
       
       
     );
-    // <div>
-    //   className="color" onhover={}
-    // </div>
+  
     
   }
 };
@@ -60,8 +47,9 @@ class App extends React.Component {
       this.state.colors.push({hexCode: this.generateColor()});
     }
   }
-    
-  generateColor () {
+  
+ 
+  generateColor (){
     return '#' +  Math.random().toString(16).substr(-6);
   }
   
@@ -79,10 +67,10 @@ class App extends React.Component {
       <div className="color-container">
         { this.state.colors.map((color, index) => <Color key={`color-${index}`} index={index} update={this.updateColor.bind(this)} hexCode={color.hexCode}></Color>) }
       </div>
+      
     )
   }
 }
-
 ReactDOM.render(<App />, document.getElementById('root'));
 
 export default App;
