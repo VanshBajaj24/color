@@ -4,13 +4,20 @@
   background-color: white;
   border-radius: 10px;
 }
-
-button{
-  background-color: none;
-  margin-top: 0;
-  opacity: 60%;
-  width: 100%;
- 
+.main{
+    display: flex;
+    flex-direction: row;
+    margin: 150px 100px 150px 450px;
+}
+.d1,.d2,.d3,.d4,.d5{
+      height: 250px;
+      width: 100px;
+      border-style: solid;
+      border-width: thin;
+}
+p{
+  align-content: center;
+  margin-left: 10px;
 }
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
